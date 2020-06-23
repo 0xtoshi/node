@@ -1,0 +1,32 @@
+		<!-- jQuery -->
+        <script src="/assets/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="/assets/js/popper.min.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		
+		<!-- Datatables JS -->
+		<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="assets/plugins/datatables/datatables.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="/assets/js/script.js"></script>
+		
+		<script>
+		(function() {
+		var current = location.pathname;
+		$('ul li a').each(function() {
+			var $this = $(this); 
+
+			// we check comparison between current page and attribute redirection.
+			if ($this.attr('href') === current) {
+				$(this).closest('li').addClass("active");
+			}
+		});
+	})();
+		</script>
+    </body>
+</html>

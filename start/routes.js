@@ -36,11 +36,12 @@ Route.on('/').render('welcome')
  /**
   * UI CONTROLLER
   */
-
-  Route.get('dashboard','UIController.Dashboard');
+  Route.get('login','UIController.Login')
+  Route.get('dashboard','UIController.Dashboard')
   Route.get('bq','UIController.Bq')
+  Route.get('bq/tambah','UIController.TambahBQ')
   Route.get('surat_penerimaan','UIController.SuratPenerimaan')
-  Route.get('invoice','UIController.SuratPenerimaan')
+  Route.get('invoice','UIController.Invoice')
   Route.get('surat_penerimaan','UIController.SuratPenerimaan')
   Route.get('input_surat_laporan','UIController.SuratPenerimaan')
   Route.get('tender_selesai','UIController.SuratPenerimaan')

@@ -16,6 +16,18 @@ class UiController {
     async SuratPenerimaan(){
         return View.render('SuratPenerimaan')
     }
+
+    async Login(){
+        return View.render('Login')
+    }
+
+    async TambahBQ(){
+        return View.render('TambahBQ')
+    }
+
+    async Invoice(){
+        return View.render('Invoice')
+    }
 }
 
 module.exports = UiController

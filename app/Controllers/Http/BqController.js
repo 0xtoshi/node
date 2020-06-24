@@ -41,7 +41,7 @@ class BqController {
         }
         const validation = await validate(req, rules, messages)
         if (validation.fails()) {    
-          return validation.messages()
+          return response.status(400).json({ status : 400 , msg : validation.messages() })
         }
 
         const member = new Member()
@@ -52,7 +52,7 @@ class BqController {
 
         await member.save()
 
-        response.status(200).json({ status : 200 , msg : 'Sukses Menambahkan Member IKS' })
+        return response.status(200).json({ status : 200 , msg : 'Sukses Menambahkan Member IKS' })
 
     }
 
@@ -70,7 +70,7 @@ class BqController {
         }
         const validation = await validate(req, rules, messages)
         if (validation.fails()) {    
-          return validation.messages()
+            return response.status(400).json({ status : 400 , msg : validation.messages() })
         }
 
         const CallbackMember = await Member.query()
@@ -88,10 +88,10 @@ class BqController {
                 return response.status(200).json({ status : 200 , msg : 'Login Sukses! Anda akan dialihkan ke Dashboard!' })
 
             }else{
-                return response.status(401).json({ status : 401, msg : 'Login Gagal! Pastikan username atau Password Benar!' })
+                return response.status(401).json({ status : 401, msg : [{message : 'Login Gagal! Pastikan username atau Password Benar!'}] })
             }
        }else{
-           return response.status(401).json({ status : 401, msg : 'Login Gagal! Pastikan username atau Password Benar!' })
+           return response.status(401).json({ status : 401, msg : [{message : 'Login Gagal! Pastikan username atau Password Benar!'}] })
        }
         
     }
@@ -118,7 +118,7 @@ class BqController {
         }
         const validation = await validate(req, rules, messages)
         if (validation.fails()) {    
-          return validation.messages()
+            return response.status(400).json({ status : 400 , msg : validation.messages() })
         }
 
         await BQ.create(req)
@@ -144,7 +144,7 @@ class BqController {
         }
         const validation = await validate(req, rules, messages)
         if (validation.fails()) {    
-          return validation.messages()
+            return response.status(400).json({ status : 400 , msg : validation.messages() })
         }
 
         await Personil.create(req)
@@ -167,7 +167,7 @@ class BqController {
         }
         const validation = await validate(req, rules, messages)
         if (validation.fails()) {    
-          return validation.messages()
+            return response.status(400).json({ status : 400 , msg : validation.messages() })
         }
 
         await Perlengkapan.create(req)
@@ -190,7 +190,7 @@ class BqController {
         }
         const validation = await validate(req, rules, messages)
         if (validation.fails()) {    
-          return validation.messages()
+            return response.status(400).json({ status : 400 , msg : validation.messages() })
         }
 
         await Lain2.create(req)

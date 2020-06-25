@@ -56,8 +56,8 @@
 													<td>{{ data.instansi }}</td>
 													<td>{{ data.lama_tender }}</td>
 													<td>
-														<button class="btn btn-info" type="button">Edit</button>
-														<button class="btn btn-danger" type="button">Delete</button>
+													<a href="/bq/edit/{{ data.id }}" class="btn btn-info" type="button">Edit</a>
+													<button name="deleteBQ" value="{{ data.nama }}" id="{{ data.id }}" class="btn btn-danger" type="button">Delete</button>
 													</td>
 												</tr>
 												@endeach
@@ -77,3 +77,42 @@
 		<!-- /Main Wrapper -->
 		
 @include('BqLayout/footer')
+
+<script>
+	$('document').ready(() => {
+
+		console.log('READY!')
+		$("button[name=deleteBQ]").click(function() {
+			swal({
+			title: "Apakah anda yakin?",
+			text: "Akan menghapus BQ = "+this.value,
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+			})
+			.then((willDelete) => {
+			if (willDelete) {
+				$.ajax({
+					url : '/Api/DeleteBq/'+this.id,
+					method : 'GET',
+					success : (data) => { 
+						swal("Sukses Menghapus BQ!", {
+						icon: "success",
+						});
+						$('#bq_'+this.id).remove()
+					},
+					error : (error) => {
+						swal("Gagal Menghapus BQ!", {
+						icon: "error",
+						});
+					}
+				})
+				
+			} else {
+				swal("Batal Menghapus BQ!");
+			}
+		});
+
+		});
+	})
+</script>

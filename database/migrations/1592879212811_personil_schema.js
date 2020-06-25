@@ -10,7 +10,7 @@ class PersonilSchema extends Schema {
       table.string('jabatan', 100)
       table.integer('gaji', 11)
       table.integer('jumlah', 11)
-      table.integer('id_bq').unsigned().references('id').inTable('bqs')
+      table.integer('id_bq').unsigned().references('id').inTable('bqs').onDelete('cascade')
       table.timestamps()
     })
   }

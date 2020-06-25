@@ -9,7 +9,7 @@ class InputFileSchema extends Schema {
       table.increments()
       table.string('file', 100)
       table.string('keterangan', 100)
-      table.integer('id_tender').unsigned().references('id').inTable('tenders')
+      table.integer('id_tender').unsigned().references('id').inTable('tenders').onDelete('cascade')
       table.timestamps()
     })
   }

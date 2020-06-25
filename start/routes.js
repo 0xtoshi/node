@@ -31,6 +31,9 @@ Route.on('/').render('welcome')
  Route.post('Api/TambahLain2','BqController.TambahLain2')
  Route.post('Api/InsertBQ','BqController.InsertMultiBQ')
  Route.get('Api/DataBQ','BqController.DataBQ')
+ Route.post('Api/UpdateMultiBQ','BqController.UpdateMultiBQ')
+ Route.get('Api/DeleteBq/:id','BqController.DeletBQ').as('id')
+ 
 
 
 
@@ -41,7 +44,9 @@ Route.on('/').render('welcome')
   Route.get('dashboard','UIController.Dashboard')
   Route.get('bq','UIController.Bq')
   Route.get('bq/tambah','UIController.TambahBQ')
+  Route.get('bq/edit/:id','UIController.EditBQ').as('id')
   Route.get('surat_penerimaan','UIController.SuratPenerimaan')
+  Route.get('surat_penerimaan/id/:id','UIController.PilihSuratPenerimaan').as('id')
   Route.get('invoice','UIController.Invoice')
   Route.get('surat_penerimaan','UIController.SuratPenerimaan')
   Route.get('input_surat_laporan','UIController.SuratPenerimaan')

@@ -17,12 +17,19 @@ class UiController {
 
     async Bq(){
         const getDataBQ = await BQ.all()
-        console.log(getDataBQ.toJSON())
+        
         return View.render('Bq',{ data_bq : getDataBQ.toJSON()})
     }
 
     async SuratPenerimaan(){
-        return View.render('SuratPenerimaan')
+        const getDataBQ = await BQ.all()
+        return View.render('SuratPenerimaan', { data_bq : getDataBQ.toJSON()})
+    }
+
+    async PilihSuratPenerimaan({request, response, session}){
+        var id = request.params.id
+        const getBQData = await BQ.find(id)
+        return View.render('PilihSuratPenerimaan', { data_bq : getBQData.toJSON()})
     }
 
     async Login(){
@@ -35,6 +42,21 @@ class UiController {
 
     async Invoice(){
         return View.render('Invoice')
+    }
+
+    async EditBQ({request, response, session}){
+        var id = request.params.id
+        const getBQ = await BQ.find(id)
+        const getPersonil = await Personil.query().where('id_bq',id).fetch()
+        const getPerlengkapan = await Perlengkapan.query().where('id_bq',id).fetch()
+        const getLain2 = await Lain2.query().where('id_bq',id).fetch()
+        const BQS = getBQ.toJSON()
+        const Personils = getPersonil.toJSON()
+        const Perlengkapans = getPerlengkapan.toJSON()
+        const Lain2s = getLain2.toJSON()
+        
+  
+        return View.render('EditBQ',{BQS, Personils, Perlengkapans, Lain2s})
     }
 }
 

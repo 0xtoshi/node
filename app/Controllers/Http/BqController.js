@@ -265,6 +265,72 @@ class BqController {
         return response.status(200).json({ status : 200 , msg : 'Sukses Menyimpan BQ Tender!' })
     }
 
+    async UpdateMultiBQ({ request , response , session})
+    {
+        var post = request.all()
+        var param_tender = {
+            nama : post.nama_tender,
+            nilai : post.nilai_tender,
+            instansi : post.instansi_tender,
+            lama_tender : post.lama_tender
+        }
+
+        await BQ.updateOrCreate(param_tender, { id : post.id})
+
+        var personil_jabatan = post.personil_jabatan
+        var personil_gaji  = post.personil_gaji
+        var personil_jumlah = post.personil_jumlah
+
+        for (let i = 0; i < personil_jabatan.length; i++) {
+
+            await Personil.updateOrCreate({
+                jabatan : personil_jabatan[i],
+                gaji : personil_gaji[i],
+                jumlah : personil_jumlah[i],
+            }, { id_bq : post.id })
+            
+        }
+        
+        var nama_perlengkapan = post.nama_perlengkapan
+        var nominal_perlengkapan = post.nominal_perlengkapan
+        var jumlah_perlengkapan = post.jumlah_perlengkapan
+        for (let p = 0; p < nama_perlengkapan.length; p++) {
+
+            await Perlengkapan.updateOrCreate({
+                nama : nama_perlengkapan[p],
+                nominal : nominal_perlengkapan[p],
+                jumlah : jumlah_perlengkapan[p],
+            }, { id_bq : post.id })
+        }
+
+        var nama_lain2 = post.nama_lain2
+        var nominal_lain2 = post.nominal_lain2
+        var jumlah_lain2 = post.jumlah_lain2
+        for (let l = 0; l < nama_lain2.length; l++) {
+            
+            await Lain2.updateOrCreate({
+                nama : nama_lain2[l],
+                nominal : nominal_lain2[l],
+                jumlah : jumlah_lain2[l],
+            }, { nama : nama_lain2[l] , id_bq : post.id })
+        }
+
+        
+        
+        
+
+        return response.status(200).json({ status : 200 , msg : 'Sukses Update BQ Tender!' })
+    }
+
+    async DeletBQ({request , response ,session}){
+        var id = request.params.id
+
+        const BQS = await BQ.findBy('id', id)
+        await BQS.delete()
+    
+        return response.status(200).json({ status : 200 , msg : 'Sukses Menghapus BQ Tender!' })
+    }
+
 }
 
 module.exports = BqController

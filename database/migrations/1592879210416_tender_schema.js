@@ -9,7 +9,7 @@ class TenderSchema extends Schema {
       table.increments()
       table.integer('bulan', 2)
       table.integer('nominal', 11)
-      table.integer('id_bq').unsigned().references('id').inTable('bqs')
+      table.integer('id_bq').unsigned().references('id').inTable('bqs').onDelete('cascade')
       table.timestamps()
     })
   }

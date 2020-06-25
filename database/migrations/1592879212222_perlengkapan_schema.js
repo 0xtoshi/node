@@ -10,7 +10,7 @@ class PerlengkapanSchema extends Schema {
       table.string('nama', 100)
       table.integer('nominal', 11)
       table.integer('jumlah', 11)
-      table.integer('id_bq').unsigned().references('id').inTable('bqs')
+      table.integer('id_bq').unsigned().references('id').inTable('bqs').onDelete('cascade')
       table.timestamps()
     })
   }

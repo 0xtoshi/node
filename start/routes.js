@@ -29,6 +29,7 @@ Route.on('/').render('welcome')
  Route.post('Api/TambahPersonil','BqController.TambahPersonil')
  Route.post('Api/TambahPerlengkapan','BqController.TambahPerlengkapan')
  Route.post('Api/TambahLain2','BqController.TambahLain2')
+ Route.post('Api/InsertBQ','BqController.InsertMultiBQ')
  Route.get('Api/DataBQ','BqController.DataBQ')
 
 

@@ -203,6 +203,68 @@ class BqController {
         return response.status(200).json(data)
     }
 
+    async InsertMultiBQ({ request , response , session})
+    {
+        var post = request.all()
+        var param_tender = {
+            nama : post.nama_tender,
+            nilai : post.nilai_tender,
+            instansi : post.instansi_tender,
+            lama_tender : post.lama_tender
+        }
+
+        var CreateBQ = await BQ.create(param_tender)
+
+        var getIDBQ = CreateBQ.id
+
+        var personil_jabatan = post.personil_jabatan
+        var personil_gaji  = post.personil_gaji
+        var personil_jumlah = post.personil_jumlah
+
+        var personil_push = []
+        for (let i = 0; i < personil_jabatan.length; i++) {
+            personil_push.push({
+                jabatan : personil_jabatan[i],
+                gaji : personil_gaji[i],
+                jumlah : personil_jumlah[i],
+                id_bq : getIDBQ
+            })
+            
+        }
+        
+        var nama_perlengkapan = post.nama_perlengkapan
+        var nominal_perlengkapan = post.nominal_perlengkapan
+        var jumlah_perlengkapan = post.jumlah_perlengkapan
+        var perlengkapan_push = []
+        for (let p = 0; p < nama_perlengkapan.length; p++) {
+            perlengkapan_push.push({
+                nama : nama_perlengkapan[p],
+                nominal : nominal_perlengkapan[p],
+                jumlah : jumlah_perlengkapan[p],
+                id_bq : getIDBQ
+            })
+        }
+
+        var nama_lain2 = post.nama_lain2
+        var nominal_lain2 = post.nominal_lain2
+        var jumlah_lain2 = post.jumlah_lain2
+        var lain2_push = []
+        for (let l = 0; l < nama_lain2.length; l++) {
+            lain2_push.push({
+                nama : nama_lain2[l],
+                nominal : nominal_lain2[l],
+                jumlah : jumlah_lain2[l],
+                id_bq : getIDBQ
+            })
+        }
+
+        await Personil.createMany(personil_push)
+        await Perlengkapan.createMany(perlengkapan_push)
+        await Lain2.createMany(lain2_push)
+
+        return response.status(200).json({ status : 200 , msg : 'Sukses Menyimpan BQ Tender!' })
+    }
+
 }
 
 module.exports = BqController

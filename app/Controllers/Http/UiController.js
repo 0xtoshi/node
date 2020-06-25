@@ -29,7 +29,24 @@ class UiController {
     async PilihSuratPenerimaan({request, response, session}){
         var id = request.params.id
         const getBQData = await BQ.find(id)
-        return View.render('PilihSuratPenerimaan', { data_bq : getBQData.toJSON()})
+        return View.render('PilihSuratPenerimaan', { data_bq : getBQData.toJSON() , id : id})
+    }
+
+    async TambahSuratPenerimaan({request, response, session})
+    {  
+        var id = request.params.id
+        const getBQ = await BQ.find(id)
+        const getPersonil = await Personil.query().where('id_bq',id).fetch()
+        const getPerlengkapan = await Perlengkapan.query().where('id_bq',id).fetch()
+        const getLain2 = await Lain2.query().where('id_bq',id).fetch()
+        const BQS = getBQ.toJSON()
+        const Personils = getPersonil.toJSON()
+        const Perlengkapans = getPerlengkapan.toJSON()
+        const Lain2s = getLain2.toJSON()
+        
+  
+        return View.render('TambahSuratPenerimaan',{BQS, Personils, Perlengkapans, Lain2s})
+        
     }
 
     async Login(){

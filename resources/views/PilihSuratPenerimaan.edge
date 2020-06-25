@@ -52,6 +52,40 @@
                                         <div class="col-sm-2"><h4>Lama Tender : </h4></div>
                                         <div class="col-sm-6"><h4>{{data_bq.lama_tender}} (Bulan) </h4></div>
                                     </div> 
+                                    
+                                    <div class="table-responsive">
+										<table class="table table-stripped">
+											<thead>
+												<tr>
+													<th>Bulan</th>
+													<th>Nominal</th>
+													<th>Tools</th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												
+												<tr id="bq_{{ id }}">
+													<td>{{ data.nama }}</td>
+													<td>{{ data.nilai }}</td>
+													<td>
+                                                    <a href="/surat_penerimaan/id/{{ id }}" class="btn btn-info" type="button">Edit!</a>
+                                                    <a href="/surat_penerimaan/id/{{ id }}" class="btn btn-danger" type="button">Delete!</a>
+                                                    <a href="/surat_penerimaan/id/{{ id }}" class="btn btn-success" type="button">Pilih!</a>
+													</td>
+												</tr>
+                                                
+                                               
+											</tbody>
+											
+                                        </table>
+                                        <div align="right">
+                                        <a href="/surat_penerimaan/tambah/{{ id }}" class="btn btn-info" type="button"><i class="fa fa-plus"></i>Tambah</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                    
                                 </div>
                             </div>
 						</div>			

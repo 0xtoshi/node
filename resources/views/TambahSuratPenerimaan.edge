@@ -73,12 +73,17 @@
                                               'jumlah' => $request->input('jumlah'),
                                               'id_bq' => $ID_BQ->id
                                         -->
+                                       
                                         @each(data in Personils)
                                         <div id="personil_form" class="row">
-                                        <div class="col-sm-2">
+                                          @if( $loop.index == 0 ) 
+                                          <div class="col-sm-2">
                                                <label class="text-black"> Personil </label>
                                            </div>
-                                          
+                                           @else
+                                           <div class="col-sm-2"></div>
+                                           @endif
+                                        
                                            <div class="col-sm-3">
                                                <label> Jabatan </label>
                                            <input type="text" class="form-control" name="personil_jabatan[]" value="{{ data.jabatan }}" id="personil_jabatan" placeholder="Jabatan" readonly>
@@ -92,8 +97,8 @@
                                               <input type="number" class="form-control" name="personil_jumlah[]" value="{{ data.jumlah }}" id="personil_jumlah" placeholder="Jumlah" readonly>
                                            </div>
                                            <div class="col-sm-2">
-                                            <label> Jumlah </label>
-                                            <input type="number" class="form-control" name="personil_terpenuhi[]" value="{{ data.jumlah }}" id="personil_jumlah" placeholder="Jumlah" required>
+                                            <label> Terpenuhi </label>
+                                            <input type="number" class="form-control" name="personil_terpenuhi[]"  id="personil_terpenuhi" placeholder="Terpenuhi" required>
                                          </div> 
 
 
@@ -118,9 +123,13 @@
                                          -->
                                         @each(data in Perlengkapans)
                                         <div id="perlengkapan_form" class="row">
-                                        <div class="col-sm-2">
+                                          @if( $loop.index == 0 ) 
+                                          <div class="col-sm-2">
                                                <label class="text-black"> Perlengkapan </label>
                                            </div>
+                                           @else
+                                           <div class="col-sm-2"></div>
+                                           @endif
                                            <div class="col-sm-3">
                                                <label> Nama Barang </label>
                                            <input type="text" class="form-control" name="nama_perlengkapan[]" value="{{ data.nama }}" id="nama_perlengkapan" placeholder="Nama Barang" readonly>
@@ -134,8 +143,8 @@
                                               <input type="number" class="form-control" name="jumlah_perlengkapan[]" value="{{ data.jumlah }}" id="jumlah_perlengkapan" placeholder="Jumlah" readonly>
                                            </div>
                                            <div class="col-sm-2">
-                                            <label> Jumlah </label>
-                                            <input type="number" class="form-control" name="perlengkapan_terpenuhi[]" value="{{ data.jumlah }}" id="personil_jumlah" placeholder="Jumlah" required>
+                                            <label> Terpenuhi </label>
+                                            <input type="number" class="form-control" name="perlengkapan_terpenuhi[]"  id="perlengkapan_terpenuhi" placeholder="Terpenuhi" required>
                                          </div> 
                                         </div>
                                         
@@ -159,9 +168,13 @@
                                          -->
                                         @each(data in Lain2s)
                                         <div id="lain2_form" class="row">
-                                        <div class="col-sm-2">
+                                          @if( $loop.index == 0 ) 
+                                          <div class="col-sm-2">
                                                <label class="text-black"> Lain-Lain </label>
                                            </div>
+                                           @else
+                                           <div class="col-sm-2"></div>
+                                           @endif
                                            <div class="col-sm-3">
                                                <label> Nama Item </label>
                                            <input type="text" id="nama_lain2" name="nama_lain2[]" value="{{ data.nama }}" class="form-control" placeholder="Nama Item " readonly>
@@ -175,8 +188,8 @@
                                               <input type="number" id="jumlah_lain2" name="jumlah_lain2[]" value="{{ data.jumlah }}" class="form-control" placeholder="Jumlah" readonly>
                                            </div>
                                            <div class="col-sm-2">
-                                            <label> Jumlah </label>
-                                            <input type="number" class="form-control" name="lain2_terpenuhi[]" value="{{ data.jumlah }}" id="personil_jumlah" placeholder="Jumlah" required>
+                                            <label> Terpenuhi </label>
+                                            <input type="number" class="form-control" name="lain2_terpenuhi[]" id="lain2_terpenuhi" placeholder="Terpenuhi" required>
                                          </div> 
                                         </div>
                                         @endeach

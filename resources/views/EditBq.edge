@@ -75,9 +75,13 @@
                                         -->
                                         @each(data in Personils)
                                         <div id="personil_form" class="row">
-                                        <div class="col-sm-2">
+                                          @if( $loop.index == 0 ) 
+                                          <div class="col-sm-2">
                                                <label class="text-black"> Personil </label>
                                            </div>
+                                           @else
+                                           <div class="col-sm-2"></div>
+                                           @endif
                                           
                                            <div class="col-sm-3">
                                                <label> Jabatan </label>
@@ -112,9 +116,13 @@
                                          -->
                                         @each(data in Perlengkapans)
                                         <div id="perlengkapan_form" class="row">
-                                        <div class="col-sm-2">
+                                          @if( $loop.index == 0 ) 
+                                          <div class="col-sm-2">
                                                <label class="text-black"> Perlengkapan </label>
                                            </div>
+                                           @else
+                                           <div class="col-sm-2"></div>
+                                           @endif
                                            <div class="col-sm-3">
                                                <label> Nama Barang </label>
                                            <input type="text" class="form-control" name="nama_perlengkapan[]" value="{{ data.nama }}" id="nama_perlengkapan" placeholder="Nama Barang" required>
@@ -148,9 +156,13 @@
                                          -->
                                         @each(data in Lain2s)
                                         <div id="lain2_form" class="row">
-                                        <div class="col-sm-2">
+                                          @if( $loop.index == 0 ) 
+                                          <div class="col-sm-2">
                                                <label class="text-black"> Lain-Lain </label>
                                            </div>
+                                           @else
+                                           <div class="col-sm-2"></div>
+                                           @endif
                                            <div class="col-sm-3">
                                                <label> Nama Item </label>
                                            <input type="text" id="nama_lain2" name="nama_lain2[]" value="{{ data.nama }}" class="form-control" placeholder="Nama Item " required>

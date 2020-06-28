@@ -284,10 +284,14 @@ class BqController {
         for (let i = 0; i < personil_jabatan.length; i++) {
 
             await Personil.updateOrCreate({
+                id_bq : post.id,
                 jabatan : personil_jabatan[i],
                 gaji : personil_gaji[i],
                 jumlah : personil_jumlah[i],
-            }, { id_bq : post.id })
+            }, { id_bq : post.id,
+                jabatan : personil_jabatan[i],
+                gaji : personil_gaji[i],
+                jumlah : personil_jumlah[i] })
             
         }
         

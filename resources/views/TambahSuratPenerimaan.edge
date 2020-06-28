@@ -106,14 +106,6 @@
                                         </div>
                                         @endeach
                                         
-                                        <div id="personil_row"></div>
-                                        <br/>
-                                        <div class="row">
-                                        <div class="col-md-2"></div>
-                                        <div class="col-sm-3">
-                                             <button id="personil-add" type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Tambah Row</button>
-                                        </div>
-                                        </div>
                                         <br/>
                                         <!-- 
                                             'nama' => $request->input('nama'),
@@ -150,14 +142,7 @@
                                         
                                         @endeach
           
-                                        <div id="perlengkapan_row"></div>
-                                        <br/>
-                                        <div class="row">
-                                        <div class="col-md-2"></div>
-                                        <div class="col-sm-3">
-                                             <button id="perlengkapan-add" type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Tambah Row</button>
-                                        </div>
-                                        </div>
+
                                         <br/>
           
                                         <!--
@@ -193,15 +178,7 @@
                                          </div> 
                                         </div>
                                         @endeach
-                                        
-                                        <div id="lain2_row"></div>
-                                        <br/>
-                                        <div class="row">
-                                        <div class="col-md-2"></div>
-                                        <div class="col-sm-3">
-                                             <button id="lain2-add" type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Tambah Row</button>
-                                        </div>
-                                        </div>
+
                                         <br/>
                                         
                                         <div class="form-group">
@@ -251,39 +228,7 @@
 
       console.log('Document Ready!')
 
-      var i=1;
-      $('#personil-add').click(function(){
-         i++;
-         console.log('CLICKED' + i )
-         $('#personil_row').append('<div id="personil_'+i+'" class="row"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="personil_jabatan[]" id="personil_jabatan" placeholder="Jabatan" required></div><div class="col-sm-3"><input type="number" class="form-control" name="personil_gaji[]" id="personil_gaji" placeholder="Gaji" required></div><div class="col-sm-2"><input type="number" class="form-control" name="personil_jumlah[]" id="personil_jumlah" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
-      });
-      
-      $(document).on('click', '.btn-danger', function(){
-         var button_id = $(this).attr("id"); 
-         $('#personil_'+button_id+'').remove();
-      });
 
-      $('#perlengkapan-add').click(function(){
-         i++;
-         console.log('CLICKED' + i )
-         $('#perlengkapan_row').append('<div id="perlengkapan_'+i+'" class="row"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="nama_perlengkapan" id="nama_perlengkapan" placeholder="Nama Barang" required></div><div class="col-sm-3"><input type="number" class="form-control" name="nominal_perlengkapan[]" id="nominal_perlengkapan" placeholder="Nominal" required></div><div class="col-sm-2"><input type="number" class="form-control" name="jumlah_perlengkapan[]" id="jumlah_perlengkapan" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
-      });
-      
-      $(document).on('click', '.btn-danger', function(){
-         var button_id = $(this).attr("id"); 
-         $('#perlengkapan_'+button_id+'').remove();
-      });
-
-      $('#lain2-add').click(function(){
-         i++;
-         console.log('CLICKED' + i )
-         $('#lain2_row').append('<div id="personil_'+i+'" class="row"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="nama_lain2" id="nama_lain2" placeholder="Nama Item" required></div><div class="col-sm-3"><input type="number" class="form-control" name="nominal_lain2[]" id="nominal_lain2" placeholder="Nominal" required></div><div class="col-sm-2"><input type="number" class="form-control" name="jumlah_lain2[]" id="jumlah_perlengkapan" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
-      });
-      
-      $(document).on('click', '.btn-danger', function(){
-         var button_id = $(this).attr("id"); 
-         $('#lain2_'+button_id+'').remove();
-      });
 
 
       $('#tambah_bq').submit((e) => {

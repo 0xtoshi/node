@@ -29,7 +29,11 @@ class UiController {
     async PilihSuratPenerimaan({request, response, session}){
         var id = request.params.id
         const getBQData = await BQ.find(id)
-        return View.render('PilihSuratPenerimaan', { data_bq : getBQData.toJSON() , id : id})
+        const getTender = await Tender.query()
+                            .where('id_bq', id)
+                            .groupBy('bulan')
+                            .fetch()
+        return View.render('PilihSuratPenerimaan', { data_bq : getBQData.toJSON() , id : id , data_tender : getTender.toJSON() })
     }
 
     async TambahSuratPenerimaan({request, response, session})

@@ -64,8 +64,8 @@
 												</tr>
 											</thead>
 											<tbody>
-												
-												<tr id="bq_{{ id }}">
+												@each(data in data_tender)
+												<tr id="tender_{{ id }}">
 													<td>{{ data.nama }}</td>
 													<td>{{ data.nilai }}</td>
 													<td>
@@ -73,7 +73,8 @@
                                                     <a href="/surat_penerimaan/id/{{ id }}" class="btn btn-danger" type="button">Delete!</a>
                                                     <a href="/surat_penerimaan/id/{{ id }}" class="btn btn-success" type="button">Pilih!</a>
 													</td>
-												</tr>
+                                                </tr>
+                                                @endeach
                                                 
                                                
 											</tbody>

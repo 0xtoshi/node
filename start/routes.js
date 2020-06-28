@@ -33,6 +33,10 @@ Route.on('/').render('welcome')
  Route.get('Api/DataBQ','BqController.DataBQ')
  Route.post('Api/UpdateMultiBQ','BqController.UpdateMultiBQ')
  Route.get('Api/DeleteBq/:id','BqController.DeletBQ').as('id')
+ Route.get('Api/DeletePersonil/:id','BqController.DeletePersonil').as('id')
+ Route.get('Api/DeletePerlengkapan/:id','BqController.DeletePerlengkapan').as('id')
+ Route.get('Api/DeleteLain2/:id','BqController.DeleteLain2').as('id')
+ 
  
 
 

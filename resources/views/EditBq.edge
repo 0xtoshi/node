@@ -84,19 +84,31 @@
                                            @endif
                                            <input type="hidden" name="id_personil[]" value="{{ data.id }}">
                                            <div class="col-sm-3">
-                                               <label> Jabatan </label>
+                                           @if( $loop.index == 0 ) 
+                                             <label> Jabatan </label> 
+                                           @endif
                                            
                                            <input type="text" class="form-control" name="personil_jabatan[]" value="{{ data.jabatan }}" id="personil_jabatan" placeholder="Jabatan" required>
                                            </div>
                                            <div class="col-sm-3">
+                                             @if( $loop.index == 0 )
                                               <label> Gaji (RP) </label>
+                                             @endif
                                               <input type="number" class="form-control" name="personil_gaji[]" value="{{ data.gaji }}" id="personil_gaji" placeholder="Gaji" required>
                                            </div>
                                            <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
                                               <label> Jumlah </label>
+                                             @endif
                                               <input type="number" class="form-control" name="personil_jumlah[]" value="{{ data.jumlah }}" id="personil_jumlah" placeholder="Jumlah" required>
-                                           </div> 
-
+                                             
+                                             </div>
+                                             <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
+                                             <label> Action </label>
+                                             @endif
+                                             <button type="button" name="deletePersonil" id="{{ data.id }}" value="{{ data.jabatan }}" class="btn btn-danger d-flex justify-content-center"><i class="fa fa-trash"></i></button>
+                                             </div>
                                         </div>
                                         @endeach
                                         
@@ -126,18 +138,32 @@
                                            @endif
                                            <input type="hidden" name="id_perlengkapan[]" value="{{ data.id }}">
                                            <div class="col-sm-3">
+                                           @if( $loop.index == 0 )
                                                <label> Nama Barang </label>
+                                           @endif
                                            <input type="text" class="form-control" name="nama_perlengkapan[]" value="{{ data.nama }}" id="nama_perlengkapan" placeholder="Nama Barang" required>
                                            </div>
                                            <div class="col-sm-3">
+                                           @if( $loop.index == 0 )
                                               <label> Nominal (RP) </label>
+                                           @endif
                                               <input type="number" class="form-control" name="nominal_perlengkapan[]" value="{{ data.nominal }}" id="nominal_perlengkapan" placeholder="Nominal" required>
                                            </div>
                                            <div class="col-sm-2">
+                                           @if( $loop.index == 0 )
                                               <label> Jumlah </label>
+                                           @endif
                                               <input type="number" class="form-control" name="jumlah_perlengkapan[]" value="{{ data.jumlah }}" id="jumlah_perlengkapan" placeholder="Jumlah" required>
                                            </div>
+                                           <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
+                                             <label> Action </label>
+                                             @endif
+                                             <button type="button" name="deletePerlengkapan" id="{{ data.id }}" value="{{ data.nama }}" class="btn btn-danger d-flex justify-content-center"><i class="fa fa-trash"></i></button>
+                                             </div>
                                         </div>
+
+                                        
                                         @endeach
           
                                         <div id="perlengkapan_row"></div>
@@ -167,17 +193,29 @@
                                            @endif
                                            <input type="hidden" name="id_lain2[]" value="{{ data.id }}">
                                            <div class="col-sm-3">
+                                           @if( $loop.index == 0 )
                                                <label> Nama Item </label>
+                                           @endif
                                            <input type="text" id="nama_lain2" name="nama_lain2[]" value="{{ data.nama }}" class="form-control" placeholder="Nama Item " required>
                                            </div>
                                            <div class="col-sm-3">
+                                           @if( $loop.index == 0 )
                                               <label> Nominal (RP) </label>
+                                           @endif
                                               <input type="number" id="nominal_lain2" name="nominal_lain2[]" value="{{ data.nominal }}" class="form-control" placeholder="Nominal" required>
                                            </div>
                                            <div class="col-sm-2">
+                                           @if( $loop.index == 0 )
                                               <label> Jumlah </label>
+                                           @endif
                                               <input type="number" id="jumlah_lain2" name="jumlah_lain2[]" value="{{ data.jumlah }}" class="form-control" placeholder="Jumlah" required>
                                            </div>
+                                           <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
+                                             <label> Action </label>
+                                             @endif
+                                             <button type="button" name="deletePerlengkapan" id="{{ data.id }}" value="{{ data.nama }}" class="btn btn-danger d-flex justify-content-center"><i class="fa fa-trash"></i></button>
+                                             </div>
                                         </div>
                                         @endeach
                                         
@@ -242,7 +280,7 @@
       $('#personil-add').click(function(){
          i++;
          console.log('CLICKED' + i )
-         $('#personil_row').append('<div id="personil_'+i+'" class="row"><input type="hidden" name="id_personil[]" value="new"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="personil_jabatan[]" id="personil_jabatan" placeholder="Jabatan" required></div><div class="col-sm-3"><input type="number" class="form-control" name="personil_gaji[]" id="personil_gaji" placeholder="Gaji" required></div><div class="col-sm-2"><input type="number" class="form-control" name="personil_jumlah[]" id="personil_jumlah" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
+         $('#personil_row').append('<div id="personil_'+i+'" class="row"><input type="hidden" name="id_personil[]" value="new"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="personil_jabatan[]" id="personil_jabatan" placeholder="Jabatan" required></div><div class="col-sm-3"><input type="number" class="form-control" name="personil_gaji[]" id="personil_gaji" placeholder="Gaji" required></div><div class="col-sm-2"><input type="number" class="form-control" name="personil_jumlah[]" id="personil_jumlah" placeholder="Jumlah" required></div> <div class="col-sm-2"> <button type="button" id="'+i+'" class="btn btn-danger d-flex justify-content-center"><i class="fa fa-trash"></i></button> </div> </div> ');
       });
       
       $(document).on('click', '.btn-danger', function(){
@@ -294,6 +332,105 @@
             }
          })
 
+      })
+
+      $("button[name=deletePersonil]").click(function() {
+         console.log(this.id)
+			swal({
+			title: "Apakah anda yakin?",
+			text: "Akan menghapus Personil = "+this.value,
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+			})
+			.then((willDelete) => {
+			if (willDelete) {
+				$.ajax({
+					url : '/Api/DeletePersonil/'+this.id,
+					method : 'GET',
+					success : (data) => { 
+						swal("Sukses Menghapus Personil!", {
+						icon: "success",
+						});
+						$('body').append('<meta http-equiv="refresh" content="1">');
+					},
+					error : (error) => {
+						swal("Gagal Menghapus Personil!", {
+						icon: "error",
+						});
+					}
+				})
+				
+			} else {
+				swal("Batal Menghapus Personil!");
+			}
+      });
+      })
+
+      $("button[name=deletePerlengkapan]").click(function() {
+         console.log(this.id)
+			swal({
+			title: "Apakah anda yakin?",
+			text: "Akan menghapus Perlengkapan = "+this.value,
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+			})
+			.then((willDelete) => {
+			if (willDelete) {
+				$.ajax({
+					url : '/Api/DeletePerlengkapan/'+this.id,
+					method : 'GET',
+					success : (data) => { 
+						swal("Sukses Menghapus Perlengkapan!", {
+						icon: "success",
+						});
+						$('body').append('<meta http-equiv="refresh" content="1">');
+					},
+					error : (error) => {
+						swal("Gagal Menghapus Perlengkapan!", {
+						icon: "error",
+						});
+					}
+				})
+				
+			} else {
+				swal("Batal Menghapus Perlengkapan!");
+			}
+      });
+      })
+
+      $("button[name=deleteLain2]").click(function() {
+         console.log(this.id)
+			swal({
+			title: "Apakah anda yakin?",
+			text: "Akan menghapus Lain-Lain = "+this.value,
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+			})
+			.then((willDelete) => {
+			if (willDelete) {
+				$.ajax({
+					url : '/Api/DeleteLain2/'+this.id,
+					method : 'GET',
+					success : (data) => { 
+						swal("Sukses Menghapus Lain-Lain!", {
+						icon: "success",
+						});
+						$('body').append('<meta http-equiv="refresh" content="1">');
+					},
+					error : (error) => {
+						swal("Gagal Menghapus Lain-Lain!", {
+						icon: "error",
+						});
+					}
+				})
+				
+			} else {
+				swal("Batal Menghapus Lain-Lain!");
+			}
+      });
       })
 
    })

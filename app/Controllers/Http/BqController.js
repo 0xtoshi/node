@@ -367,6 +367,33 @@ class BqController {
     
         return response.status(200).json({ status : 200 , msg : 'Sukses Menghapus BQ Tender!' })
     }
+    
+    async DeletePersonil({request, response, session})
+    {
+        var id = request.params.id
+        const Personils = await Personil.findBy('id', id)
+        await Personils.delete()
+
+        return response.status(200).json({ status : 200 , msg : 'Sukses Menghapus BQ Tender!' })
+    }
+
+    async DeletePerlengkapan({ request, response, session })
+    {
+        var id = request.params.id
+        const Perlengkapans = await Perlengkapan.findBy('id', id)
+        await Perlengkapans.delete()
+
+        return response.status(200).json({ status : 200 , msg : 'Sukses Menghapus BQ Tender!' })
+    }
+
+    async DeleteLain2({ request, response, session })
+    {
+        var id = request.params.id
+        const Lain2s = await Lain2.findBy('id', id)
+        await Lain2s.delete()
+
+        return response.status(200).json({ status : 200 , msg : 'Sukses Menghapus BQ Tender!' })
+    }
 
 }
 

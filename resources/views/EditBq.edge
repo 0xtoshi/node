@@ -242,7 +242,7 @@
       $('#personil-add').click(function(){
          i++;
          console.log('CLICKED' + i )
-         $('#personil_row').append('<div id="personil_'+i+'" class="row"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="personil_jabatan[]" id="personil_jabatan" placeholder="Jabatan" required></div><div class="col-sm-3"><input type="number" class="form-control" name="personil_gaji[]" id="personil_gaji" placeholder="Gaji" required></div><div class="col-sm-2"><input type="number" class="form-control" name="personil_jumlah[]" id="personil_jumlah" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
+         $('#personil_row').append('<div id="personil_'+i+'" class="row"><input type="hidden" name="id_personil[]" value="new"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="personil_jabatan[]" id="personil_jabatan" placeholder="Jabatan" required></div><div class="col-sm-3"><input type="number" class="form-control" name="personil_gaji[]" id="personil_gaji" placeholder="Gaji" required></div><div class="col-sm-2"><input type="number" class="form-control" name="personil_jumlah[]" id="personil_jumlah" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
       });
       
       $(document).on('click', '.btn-danger', function(){
@@ -253,7 +253,7 @@
       $('#perlengkapan-add').click(function(){
          i++;
          console.log('CLICKED' + i )
-         $('#perlengkapan_row').append('<div id="perlengkapan_'+i+'" class="row"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="nama_perlengkapan" id="nama_perlengkapan" placeholder="Nama Barang" required></div><div class="col-sm-3"><input type="number" class="form-control" name="nominal_perlengkapan[]" id="nominal_perlengkapan" placeholder="Nominal" required></div><div class="col-sm-2"><input type="number" class="form-control" name="jumlah_perlengkapan[]" id="jumlah_perlengkapan" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
+         $('#perlengkapan_row').append('<div id="perlengkapan_'+i+'" class="row"><input type="hidden" name="id_perlengkapan[]" value="new"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="nama_perlengkapan" id="nama_perlengkapan" placeholder="Nama Barang" required></div><div class="col-sm-3"><input type="number" class="form-control" name="nominal_perlengkapan[]" id="nominal_perlengkapan" placeholder="Nominal" required></div><div class="col-sm-2"><input type="number" class="form-control" name="jumlah_perlengkapan[]" id="jumlah_perlengkapan" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
       });
       
       $(document).on('click', '.btn-danger', function(){
@@ -264,7 +264,7 @@
       $('#lain2-add').click(function(){
          i++;
          console.log('CLICKED' + i )
-         $('#lain2_row').append('<div id="personil_'+i+'" class="row"><div class="col-sm-2"></div><div class="col-sm-3"><input type="text" class="form-control" name="nama_lain2" id="nama_lain2" placeholder="Nama Item" required></div><div class="col-sm-3"><input type="number" class="form-control" name="nominal_lain2[]" id="nominal_lain2" placeholder="Nominal" required></div><div class="col-sm-2"><input type="number" class="form-control" name="jumlah_lain2[]" id="jumlah_perlengkapan" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
+         $('#lain2_row').append('<div id="personil_'+i+'" class="row"><div class="col-sm-2"></div> <input type="hidden" name="id_lain2[]" value="new"> <div class="col-sm-3"><input type="text" class="form-control" name="nama_lain2" id="nama_lain2" placeholder="Nama Item" required></div><div class="col-sm-3"><input type="number" class="form-control" name="nominal_lain2[]" id="nominal_lain2" placeholder="Nominal" required></div><div class="col-sm-2"><input type="number" class="form-control" name="jumlah_lain2[]" id="jumlah_perlengkapan" placeholder="Jumlah" required></div> <button type="button" id="'+i+'" class="btn btn-danger"><i class="fa fa-trash"></i></button> </div> ');
       });
       
       $(document).on('click', '.btn-danger', function(){

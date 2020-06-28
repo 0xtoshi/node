@@ -85,19 +85,27 @@
                                            @endif
                                         
                                            <div class="col-sm-3">
+                                             @if( $loop.index == 0 )
                                                <label> Jabatan </label>
+                                             @endif
                                            <input type="text" class="form-control" name="personil_jabatan[]" value="{{ data.jabatan }}" id="personil_jabatan" placeholder="Jabatan" readonly>
                                            </div>
                                            <div class="col-sm-3">
+                                             @if( $loop.index == 0 )
                                               <label> Gaji (RP) </label>
+                                             @endif
                                               <input type="number" class="form-control" name="personil_gaji[]" value="{{ data.gaji }}" id="personil_gaji" placeholder="Gaji" readonly>
                                            </div>
                                            <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
                                               <label> Jumlah </label>
+                                              @endif
                                               <input type="number" class="form-control" name="personil_jumlah[]" value="{{ data.jumlah }}" id="personil_jumlah" placeholder="Jumlah" readonly>
                                            </div>
                                            <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
                                             <label> Terpenuhi </label>
+                                            @endif
                                             <input type="number" class="form-control" name="personil_terpenuhi[]"  id="personil_terpenuhi" placeholder="Terpenuhi" required>
                                          </div> 
 
@@ -123,19 +131,27 @@
                                            <div class="col-sm-2"></div>
                                            @endif
                                            <div class="col-sm-3">
+                                             @if( $loop.index == 0 )
                                                <label> Nama Barang </label>
+                                             @endif
                                            <input type="text" class="form-control" name="nama_perlengkapan[]" value="{{ data.nama }}" id="nama_perlengkapan" placeholder="Nama Barang" readonly>
                                            </div>
                                            <div class="col-sm-3">
+                                             @if( $loop.index == 0 )
                                               <label> Nominal (RP) </label>
+                                             @endif
                                               <input type="number" class="form-control" name="nominal_perlengkapan[]" value="{{ data.nominal }}" id="nominal_perlengkapan" placeholder="Nominal" readonly>
                                            </div>
                                            <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
                                               <label> Jumlah </label>
+                                             @endif
                                               <input type="number" class="form-control" name="jumlah_perlengkapan[]" value="{{ data.jumlah }}" id="jumlah_perlengkapan" placeholder="Jumlah" readonly>
                                            </div>
                                            <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
                                             <label> Terpenuhi </label>
+                                            @endif
                                             <input type="number" class="form-control" name="perlengkapan_terpenuhi[]"  id="perlengkapan_terpenuhi" placeholder="Terpenuhi" required>
                                          </div> 
                                         </div>
@@ -161,19 +177,27 @@
                                            <div class="col-sm-2"></div>
                                            @endif
                                            <div class="col-sm-3">
+                                             @if( $loop.index == 0 )
                                                <label> Nama Item </label>
+                                             @endif
                                            <input type="text" id="nama_lain2" name="nama_lain2[]" value="{{ data.nama }}" class="form-control" placeholder="Nama Item " readonly>
                                            </div>
                                            <div class="col-sm-3">
+                                             @if( $loop.index == 0 )
                                               <label> Nominal (RP) </label>
+                                             @endif
                                               <input type="number" id="nominal_lain2" name="nominal_lain2[]" value="{{ data.nominal }}" class="form-control" placeholder="Nominal" readonly>
                                            </div>
                                            <div class="col-sm-2">
+                                             @if( $loop.index == 0 )
                                               <label> Jumlah </label>
+                                             @endif
                                               <input type="number" id="jumlah_lain2" name="jumlah_lain2[]" value="{{ data.jumlah }}" class="form-control" placeholder="Jumlah" readonly>
                                            </div>
                                            <div class="col-sm-2">
+                                            @if( $loop.index == 0 )
                                             <label> Terpenuhi </label>
+                                            @endif
                                             <input type="number" class="form-control" name="lain2_terpenuhi[]" id="lain2_terpenuhi" placeholder="Terpenuhi" required>
                                          </div> 
                                         </div>

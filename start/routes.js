@@ -38,6 +38,8 @@ Route.on('/').render('welcome')
  Route.get('Api/DeleteLain2/:id','BqController.DeleteLain2').as('id')
  
  
+ Route.post('Api/TambahSuratPenerimaan','TenderController.TambahSuratPenerimaan')
+ 
 
 
 

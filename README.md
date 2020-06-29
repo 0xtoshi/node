@@ -1,31 +1,21 @@
-# Adonis fullstack application
+# Tutorial
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+1. Install Nodejs
+2. Install Adonis CLI
+``` npm i -g @adonisjs/cli ```
+3. Start Mysql
+4. Edit kro rename .env.example dadi .env tok
+5. Edit bagian DB_CONNECTION=sqlite dadi DB_CONNECTION=mysql
+6. Migrasi
+`` adonis key:generate ``
+`` adonis migration:run ``
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+7. Letsgo Start 
 
-## Setup
+``` adonis serve -- dev ```
 
-Use the adonis command to install the blueprint
+Buka 
 
-```bash
-adonis new yardstick
-```
+http://127.0.0.1:3333/dashboard
 
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+#Oprek Ponggggg
